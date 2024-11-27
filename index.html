@@ -1,9 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Welcome to Acc3D project page!</title>
-    </head>
-    <body>
-        <h1>Welcome to Acc3D project page!</h1>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>
+    Acc3D
+  </title>
+  <link rel="icon" href="acc3d.ico">
+ 
+  <style>
+    /* Gradient text style */
+    .gradient-text {
+        background-image: linear-gradient(to right, #b59f00, green, blue);
+        /* Darker yellow */
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+        font-weight: bold;
+        /* Make the text bold */
+    }
+
+    .title.is-2.publication-title {
+        font-size: 48px;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #b59f00, green, blue);
+        /* Darker yellow */
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+    }
+
+    .title.is-3.publication-title {
+        font-size: 38px;
+        margin-bottom: 42px;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #b59f00, green, blue);
+        /* Darker yellow */
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+    }
+
+    .subtitle.is-5{
+      font-size: 23px;
+      margin-bottom: 30px;
+      /* font-weight: bold; */
+      /* background-image: linear-gradient(to right, #b59f00, green, blue);
+       
+        -webkit-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text; */
+    }
+
+    .subtitle.is-4{
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .title.is-3.submit{
+      /* font-size: 20px; */
+      margin-bottom: 60px;
+    }
+
+
+    .center-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+        /* Optional: centers the section vertically on the page */
+        margin: 20px 0;
+    }
+
+    #canvas-container {
+        width: 512px;
+        max-width: 512px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        margin-top: -5px;
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+    }
+
+    #img-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        /* Allow buttons to wrap on small screens */
+    }
+
+    .scriptButton {
+        cursor: pointer;
+        width: 164px;
+        height: auto;
+        margin: 10px;
+    }
+
+    #reloadButton {
+        padding: 10px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+        #canvas-container {
+            max-width: 90vw;
+            /* Use 90% of the viewport width on small screens */
+            height: auto;
+            /* Let height adjust to maintain aspect ratio */
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+            /* Ensure the aspect ratio is maintained */
+        }
+
+        .center-section h2 {
+            font-size: 24px;
+            /* Scale down heading font sizes for mobile */
+        }
+
+        #img-controls {
+            flex-direction: row;
+            /* Stack the controls vertically on smaller screens */
+            gap: 15px;
+        }
+
+        .scriptButton {
+            width: 100px;
+            /* Reduce button size on smaller screens */
+            height: auto;
+        }
+
+        button {
+            font-size: 14px;
+            /* Scale down the font size for buttons */
+        }
+    }
+</style>
+
+</head>
+
+<body>
+  <section class="section">
+  <div class="container has-text-centered">
+    <!-- <div class="container is-max-desktop"> -->
+    <!-- paper title -->
+    <p  class="title is-3 publication-title"> Acc3D: Accelerating Single Image to 3D Diffusion Models </br> via Edge Consistency Guided Score Distillation </p>
+    <!-- publication -->
+    <p class="subtitle is-3"> Anonymous </p>
+    <p class="title is-3 submit"> Submit to CVPR2025 </p>
+    <!-- authors -->
+    
+    <!-- affiliations -->
+
+    <!-- other links -->
+   
+  </div>
+
+
+  <!-- main container -->
+  <div class="container is-max-desktop has-text-centered">
+
+   
+    <!-- results (videos) -->
+    <!-- <p class="title is-3 mt-5 has-text-centered"> Convergence Speed </p>  -->
+
+    <p class="subtitle is-5">
+      Our method completed the Image-to-3D generation process within 1.5 seconds while achieving superior generation quality.
+    </p>
+    <video muted autoplay controls loop> <source src="./videos/accelerate.mp4" type="video/mp4"> </video>
+    <!-- <img src="accelerate.mp4" loop=infinite> -->
+    <p class="content has-text-centered is-size-5">
+     <em> Videos are played at the original speed and recorded on an NVIDIA A6000.</em>
+    </p>
+    <br>
+  
+
+
+     <!-- abstract -->
+     <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
+     <p class="content is-size-5 has-text-justified">
+       We present Acc3D to tackle the challenge of accelerating the diffusion process for generating 3D models from single images. 
+       To derive accurate reconstruction through few-step inference, we emphasize the critical issue as the modeling of the score function at the endpoints (states of the random noise). 
+       To tackle such an issue, we propose edge consistency, i.e., consistent predictions across the low signal-to-noise ratio region, to enhance a pre-trained diffusion model, enabling a distillation-based refinement of the endpoint score function. 
+       Building on those distilled diffusion models, we introduce an adversarial augmentation strategy to further enrich generation detail. The two modules complement each other, mutually reinforcing to elevate generative performance. 
+       Extensive experiments show that our Acc3D not only achieves over a 20x increase in computational efficiency but also yields notable quality improvements, compared with state-of-the-art methods. 
+     </p>
+     
+
+    <p class="title is-3 mt-5 has-text-centered"> Image-to-3D </p>
+    
+    <video muted autoplay loop> <source src="videos/image1.mp4" type="video/mp4"> </video>
+    <video muted autoplay loop> <source src="videos/image2.mp4" type="video/mp4"> </video>
+
+    <!-- <p class="content has-text-centered is-size-5">
+      We can support images with a non-zero elevation angle too!
+    </p> -->
+
+    <video muted autoplay loop> <source src="videos/elevation.mp4" type="video/mp4"> </video>
+    
+    
+
+    <!-- 3d model viewer -->
+    <p class="title is-3 mt-5 has-text-centered"> Exported Meshes </p>
+    <div class="level">
+      <div class="level-item">
+        <model-viewer src="./meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+    </div>
+    
+    <p class="title is-3 mt-5 has-text-centered"> Mesh Animations </p>
+    <p class="content has-text-centered is-size-5">
+      The following results are animated by <a href="https://www.mixamo.com/">Mixamo</a>.
+    </p>
+    <div class="level">
+      <div class="level-item">
+        <model-viewer src="./meshes/rabbit_animate.glb" poster="meshes/toy2.jpg" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./meshes/girl_animate.glb" poster="meshes/girl_animate.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+      <div class="level-item">
+        <model-viewer src="./meshes/boy_animate.glb" poster="meshes/boy_animate.png" style="width: 100%; height: 300px;" autoplay shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  </section>
+</body>
 </html>
