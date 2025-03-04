@@ -80,6 +80,11 @@ body {
 
 .author-block {
   display: inline-block;
+  margin-right: 15px;
+}
+
+.author-block:last-child {
+  margin-right: 0;
 }
 
 .publication-banner img {
